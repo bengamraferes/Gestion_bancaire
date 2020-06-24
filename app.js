@@ -118,7 +118,7 @@ Compte.prototype.etatSolde = function(){
     return this.solde
 
 }
-Compte.prototype.sodeApresOperation = function(operation){
+Compte.prototype.soldeApresOperation = function(operation){
 
    this.solde = eval(this.solde + operation.debitCredit + operation.valeur)
    operation.solde = this.solde
@@ -228,7 +228,7 @@ TesteBanque.ajouterReferece = function(client,referencesClients){
 }
 
 var referencesClients = [];
-monAdress = new Adresse("15","rue","gina pane","Rennes","35000");
+monAdress = new Adresse("15","rue","Truc","Rennes","35000");
 monClient = new Client ("feres","Ben Gamra","02/11/1987",monAdress,"feresbengamra@gmail.com","0761897294");
 monCompte = new Compte(200,monClient,12/02/2020);
 newCompte = new Compte(700,monClient,12/02/2020);
@@ -243,11 +243,11 @@ monCompte.sodeApresOperation(newOperation);
 monCompte.gererHistorique(newOperation);
 monCompte.sodeApresOperation(newOperation1);
 monCompte.gererHistorique(newOperation1);
-monCompte.sodeApresOperation(newOperation2);
+monCompte.soldeApresOperation(newOperation2);
 monCompte.gererHistorique(newOperation2);
-monCompte.sodeApresOperation(newOperation3);
+monCompte.soldeApresOperation(newOperation3);
 monCompte.gererHistorique(newOperation3);
-monCompte.sodeApresOperation(newOperation4);
+monCompte.soldeApresOperation(newOperation4);
 monCompte.gererHistorique(newOperation4);
 
 console.log(monCompte.agios(2))
